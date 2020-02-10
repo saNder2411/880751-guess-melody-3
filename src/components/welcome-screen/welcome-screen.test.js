@@ -4,7 +4,10 @@ import WelcomeScreen from './welcome-screen.jsx';
 
 it(`Should WelcomeScreen render correctly`, () => {
   const markup = renderer
-    .create(<WelcomeScreen errorCount={3} />)
+    .create(<WelcomeScreen
+      errorCount={3}
+      onWelcomeButtonClick={() => {}}
+    />)
     .toJSON();
 
   expect(markup).toMatchSnapshot();
