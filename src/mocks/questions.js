@@ -1,8 +1,6 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import App from './app.jsx';
+const AVATAR_URL = `https://api.adorable.io/avatars/128`;
 
-const questions = [
+export default [
   {
     type: `genre`,
     genre: `rock`,
@@ -33,25 +31,17 @@ const questions = [
     },
     answers: [
       {
-        picture: `https://api.adorable.io/avatars/128/1`,
+        picture: `${AVATAR_URL}/${Math.random()}`,
         artist: `John Snow`,
       },
       {
-        picture: `https://api.adorable.io/avatars/128/2`,
+        picture: `${AVATAR_URL}/${Math.random()}`,
         artist: `Jack Daniels`,
       },
       {
-        picture: `https://api.adorable.io/avatars/128/3`,
+        picture: `${AVATAR_URL}/${Math.random()}`,
         artist: `Jim Beam`,
       }
     ],
   },
 ];
-
-it(`Render App`, () => {
-  const markup = renderer
-    .create(<App errorsCount={3} questions={questions} />)
-    .toJSON();
-
-  expect(markup).toMatchSnapshot();
-});
