@@ -22,7 +22,16 @@ const question = {
 
 it(`ArtistQuestionScreen is rendered correctly`, () => {
   const markup = renderer.create(
-      <ArtistQuestionScreen question={question} onAnswer={() => {}} />
+      <ArtistQuestionScreen
+        question={question}
+        onAnswer={() => {}}
+        renderPlayer={() => {}}
+      />,
+      {
+        createNodeMock: () => {
+          return {};
+        }
+      }
   ).toJSON();
 
   expect(markup).toMatchSnapshot();
