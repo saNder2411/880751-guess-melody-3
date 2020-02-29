@@ -34,3 +34,5 @@ const withAudioPlayer = (Component) => {
 };
 
 export default withAudioPlayer;
+
+
