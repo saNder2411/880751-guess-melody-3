@@ -11,7 +11,9 @@ const mock = {
 it(`AudioPlayer is rendered correctly`, () => {
   const {song} = mock;
   const markup = renderer.create(
-      <AudioPlayer isPlaying={false} src={song.src} onPlayButtonClick={() => {}} />,
+      <AudioPlayer isPlaying={false} isLoading={true} src={song.src} onPlayButtonClick={() => {}}>
+        <audio/>
+      </AudioPlayer>,
       {
         createNodeMock: () => {
           return {};
