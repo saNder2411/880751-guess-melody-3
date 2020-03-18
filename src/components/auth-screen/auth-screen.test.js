@@ -4,13 +4,13 @@ import renderer from "react-test-renderer";
 import AuthScreen from "./auth-screen.jsx";
 
 
-const noop = () => {};
+const mockHandle = () => {};
 
 it(`AuthScreen component render correctly`, () => {
   const tree = renderer.create(
       <AuthScreen
-        onReplayButtonClick={noop}
-        onSubmit={noop}
+        onReplayButtonClick={mockHandle}
+        onSubmit={mockHandle}
       />
   ).toJSON();
 
