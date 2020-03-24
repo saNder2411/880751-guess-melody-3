@@ -60,9 +60,12 @@ describe(`Render App`, () => {
       [NameSpace.GAME]: {
         mistakes: 0,
       },
+      [NameSpace.USER]: {
+        authorizationStatus: AuthorizationStatus.NO_AUTH,
+      },
     });
 
-    const markup = renderer
+    const tree = renderer
       .create(
           <Provider store={store}>
             <App
@@ -80,7 +83,7 @@ describe(`Render App`, () => {
       )
       .toJSON();
 
-    expect(markup).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 
   it(`Render GenreQuestionScreen`, () => {
@@ -90,7 +93,7 @@ describe(`Render App`, () => {
       },
     });
 
-    const markup = renderer
+    const tree = renderer
       .create(
           <Provider store={store}>
             <App
@@ -113,7 +116,7 @@ describe(`Render App`, () => {
       )
       .toJSON();
 
-    expect(markup).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 
   it(`Render ArtistQuestionScreen`, () => {
@@ -123,7 +126,7 @@ describe(`Render App`, () => {
       },
     });
 
-    const markup = renderer
+    const tree = renderer
       .create(
           <Provider store={store}>
             <App
@@ -146,7 +149,7 @@ describe(`Render App`, () => {
       )
       .toJSON();
 
-    expect(markup).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
   });
 
   it(`Render GameOverScreen`, () => {
@@ -183,7 +186,10 @@ describe(`Render App`, () => {
   it(`Render WinScreen`, () => {
     const store = mockStore({
       [NameSpace.GAME]: {
-        mistakes: 3,
+        mistakes: 5,
+      },
+      [NameSpace.USER]: {
+        authorizationStatus: AuthorizationStatus.AUTH,
       },
     });
 
@@ -215,6 +221,9 @@ describe(`Render App`, () => {
     const store = mockStore({
       [NameSpace.GAME]: {
         mistakes: 3,
+      },
+      [NameSpace.USER]: {
+        authorizationStatus: AuthorizationStatus.NO_AUTH,
       },
     });
 
