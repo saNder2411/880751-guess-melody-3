@@ -1,9 +1,7 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import {GameType} from '../../const.js';
+import * as React from 'react';
 
 const withUserAnswer = (Component) => {
-  class WithUserAnswer extends PureComponent {
+  class WithUserAnswer extends React.PureComponent {
     constructor(props) {
       super(props);
 
@@ -46,18 +44,6 @@ const withUserAnswer = (Component) => {
       );
     }
   }
-
-  WithUserAnswer.propTypes = {
-    question: PropTypes.shape({
-      answers: PropTypes.arrayOf(PropTypes.shape({
-        src: PropTypes.string.isRequired,
-        genre: PropTypes.string.isRequired,
-      })).isRequired,
-      genre: PropTypes.string.isRequired,
-      type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
-    }).isRequired,
-    onAnswer: PropTypes.func.isRequired,
-  };
 
   return WithUserAnswer;
 };

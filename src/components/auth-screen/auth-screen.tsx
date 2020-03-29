@@ -1,13 +1,12 @@
-import React, {PureComponent, createRef} from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 
-class AuthScreen extends PureComponent {
+class AuthScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this._loginRef = createRef();
-    this._passwordRef = createRef();
+    this._loginRef = React.createRef();
+    this._passwordRef = React.createRef();
 
     this._handleSubmit = this._handleSubmit.bind(this);
   }
@@ -60,11 +59,5 @@ class AuthScreen extends PureComponent {
     );
   }
 }
-
-AuthScreen.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onReplayButtonClick: PropTypes.func.isRequired,
-};
-
 
 export default AuthScreen;

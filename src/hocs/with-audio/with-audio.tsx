@@ -1,8 +1,7 @@
-import React, {PureComponent, createRef} from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 const withAudio = (Component) => {
-  class WithAudio extends PureComponent {
+  class WithAudio extends React.PureComponent {
     constructor(props) {
       super(props);
 
@@ -12,7 +11,7 @@ const withAudio = (Component) => {
         isPlaying: props.isPlaying,
       };
 
-      this._audioRef = createRef();
+      this._audioRef = React.createRef();
     }
 
     componentDidMount() {
@@ -70,12 +69,6 @@ const withAudio = (Component) => {
       );
     }
   }
-
-  WithAudio.propTypes = {
-    isPlaying: PropTypes.bool.isRequired,
-    onPlayButtonClick: PropTypes.func.isRequired,
-    src: PropTypes.string.isRequired,
-  };
 
   return WithAudio;
 };

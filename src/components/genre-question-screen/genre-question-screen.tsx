@@ -1,9 +1,8 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import GenreQuestionItem from '../genre-question-item/genre-question-item.jsx';
+import * as React from 'react';
+import GenreQuestionItem from '../genre-question-item/genre-question-item.js';
 import {GameType} from '../../const.js';
 
-export default class GenreQuestionScreen extends PureComponent {
+export default class GenreQuestionScreen extends React.PureComponent {
   render() {
     const {onAnswer, onChange, question, renderPlayer, userAnswers} = this.props;
     const {answers, genre} = question;
@@ -36,18 +35,3 @@ export default class GenreQuestionScreen extends PureComponent {
     );
   }
 }
-
-GenreQuestionScreen.propTypes = {
-  onAnswer: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  question: PropTypes.shape({
-    answers: PropTypes.arrayOf(PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      genre: PropTypes.string.isRequired,
-    })).isRequired,
-    genre: PropTypes.string.isRequired,
-    type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
-  }).isRequired,
-  renderPlayer: PropTypes.func.isRequired,
-  userAnswers: PropTypes.arrayOf(PropTypes.bool).isRequired,
-};

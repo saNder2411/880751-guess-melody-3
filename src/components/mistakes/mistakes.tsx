@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 const Mistakes = (props) => {
   const {count} = props;
@@ -10,10 +9,6 @@ const Mistakes = (props) => {
       {mistakes.map((it, i) => <div key={`mistake-${i}`} className="wrong" />)}
     </div>
   );
-};
-
-Mistakes.propTypes = {
-  count: PropTypes.number.isRequired,
 };
 
 export default Mistakes;

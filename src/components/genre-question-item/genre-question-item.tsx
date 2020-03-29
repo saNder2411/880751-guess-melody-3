@@ -1,5 +1,4 @@
-import React, {memo} from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
 const GenreQuestionItem = ({answer, id, onChange, renderPlayer, userAnswer}) => {
 
@@ -24,15 +23,4 @@ const GenreQuestionItem = ({answer, id, onChange, renderPlayer, userAnswer}) => 
   );
 };
 
-GenreQuestionItem.propTypes = {
-  answer: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-  }).isRequired,
-  id: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired,
-  renderPlayer: PropTypes.func.isRequired,
-  userAnswer: PropTypes.bool.isRequired,
-};
-
-export default memo(GenreQuestionItem);
+export default React.memo(GenreQuestionItem);
