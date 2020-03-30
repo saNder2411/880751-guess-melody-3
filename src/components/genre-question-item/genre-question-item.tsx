@@ -9,7 +9,7 @@ type Props = {
   userAnswer: boolean;
 };
 
-const GenreQuestionItem: React.FC<Props> = ({answer, id, onChange, renderPlayer, userAnswer}) => {
+const GenreQuestionItem: React.FC<Props> = ({answer, id, onChange, renderPlayer, userAnswer}: Props) => {
 
   return (
     <div className="track">

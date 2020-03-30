@@ -6,7 +6,7 @@ type Props = {
   onReplayButtonClick: () => void;
 }
 
-const GameOverScreen: React.FC<Props> = ({onReplayButtonClick}) => {
+const GameOverScreen: React.FC<Props> = ({onReplayButtonClick}: Props) => {
   return (
     <section className="result">
       <div className="result__logo">

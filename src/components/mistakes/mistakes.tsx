@@ -4,7 +4,7 @@ type Props = {
   count: number;
 }
 
-const Mistakes: React.FC<Props> = ({count}) => {
+const Mistakes: React.FC<Props> = ({count}: Props) => {
   const mistakes = new Array(count).fill(``);
 
   return (

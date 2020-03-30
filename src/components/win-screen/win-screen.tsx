@@ -8,7 +8,7 @@ type Props = {
   onReplayButtonClick: () => void;
 }
 
-const WinScreen: React.FC<Props> = ({questionsCount, mistakesCount, onReplayButtonClick}) => {
+const WinScreen: React.FC<Props> = ({questionsCount, mistakesCount, onReplayButtonClick}: Props) => {
   const correctlyQuestionsCount = questionsCount - mistakesCount;
 
   return (

@@ -11,9 +11,10 @@ type Props = {
   type: GameType;
   goToWelcome: () => void;
   mistakes: number;
+  children: React.ReactNode;
 }
 
-const GameScreen: React.FC<Props> = ({type, children, goToWelcome, mistakes}) => {
+const GameScreen: React.FC<Props> = ({type, children, goToWelcome, mistakes}: Props) => {
   return (
     <section className={`game game--${type}`}>
       <header className="game__header">

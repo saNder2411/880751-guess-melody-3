@@ -10,7 +10,7 @@ type Props = RouteProps & {
   render: () => React.ReactNode;
 };
 
-const PrivateRoute: React.FC<Props> = ({render, path, exact, authorizationStatus}) => {
+const PrivateRoute: React.FC<Props> = ({render, path, exact, authorizationStatus}: Props) => {
 
   return (
     <Route

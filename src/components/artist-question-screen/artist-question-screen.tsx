@@ -7,7 +7,7 @@ type Props = {
   renderPlayer: (src: string, id: number) => React.ReactNode;
 }
 
-const ArtistQuestionScreen: React.FC<Props> = ({onAnswer, question, renderPlayer}) => {
+const ArtistQuestionScreen: React.FC<Props> = ({onAnswer, question, renderPlayer}: Props) => {
   const {answers, song} = question;
 
   return (

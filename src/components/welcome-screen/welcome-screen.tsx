@@ -5,7 +5,7 @@ type Props = {
   onWelcomeButtonClick: () => void;
 };
 
-const WelcomeScreen: React.FC<Props> = ({errorsCount, onWelcomeButtonClick}) => {
+const WelcomeScreen: React.FC<Props> = ({errorsCount, onWelcomeButtonClick}: Props) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">
