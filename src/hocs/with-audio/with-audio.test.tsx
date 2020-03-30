@@ -1,10 +1,14 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import withAudio from './with-audio.jsx';
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
+import withAudio from './with-audio';
+import {noop} from '../../utils';
 
 
-const MockComponent = (props) => {
-  const {children} = props;
+type MockComponentProps = {
+  children: React.ReactNode;
+}
+
+const MockComponent = ({children}: MockComponentProps) => {
 
   return (
     <div>
@@ -19,7 +23,7 @@ it(`withAudio is rendered correctly`, () => {
   const tree = renderer.create((
     <MockComponentWrapped
       isPlaying={false}
-      onPlayButtonClick={() => {}}
+      onPlayButtonClick={noop}
       src={``}
     />
   ), {

@@ -2,7 +2,11 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {AppRoute} from '../../const.js';
 
-const GameOverScreen = ({onReplayButtonClick}) => {
+type Props = {
+  onReplayButtonClick: () => void;
+}
+
+const GameOverScreen: React.FC<Props> = ({onReplayButtonClick}) => {
   return (
     <section className="result">
       <div className="result__logo">

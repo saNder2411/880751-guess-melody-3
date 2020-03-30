@@ -14,7 +14,7 @@ export interface AnswerGenre {
 };
 
 export interface QuestionArtist {
-  answer: AnswerArtist[],
+  answers: AnswerArtist[],
   song: {
     artist: string,
     src: string,
@@ -23,7 +23,7 @@ export interface QuestionArtist {
 };
 
 export interface QuestionGenre {
-  answer: AnswerGenre[],
+  answers: AnswerGenre[],
   genre: string,
   type: GameType.GENRE,
 };

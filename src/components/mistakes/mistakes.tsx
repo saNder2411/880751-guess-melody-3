@@ -1,7 +1,10 @@
 import * as React from 'react';
 
-const Mistakes = (props) => {
-  const {count} = props;
+type Props = {
+  count: number;
+}
+
+const Mistakes: React.FC<Props> = ({count}) => {
   const mistakes = new Array(count).fill(``);
 
   return (

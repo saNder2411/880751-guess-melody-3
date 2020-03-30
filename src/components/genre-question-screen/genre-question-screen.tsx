@@ -1,8 +1,16 @@
 import * as React from 'react';
-import GenreQuestionItem from '../genre-question-item/genre-question-item.js';
-import {GameType} from '../../const.js';
+import GenreQuestionItem from '../genre-question-item/genre-question-item';
+import {QuestionGenre} from '../../types';
 
-export default class GenreQuestionScreen extends React.PureComponent {
+type Props = {
+  onAnswer: () => void;
+  onChange: () => void;
+  question: QuestionGenre;
+  renderPlayer: (src: string, id: number) => React.ReactNode;
+  userAnswers: Array<boolean>;
+}
+
+export default class GenreQuestionScreen extends React.PureComponent<Props> {
   render() {
     const {onAnswer, onChange, question, renderPlayer, userAnswers} = this.props;
     const {answers, genre} = question;

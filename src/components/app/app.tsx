@@ -22,7 +22,7 @@ import {AppRoute} from '../../const';
 import {GameType, QuestionGenre, QuestionArtist} from '../../types';
 
 
-interface Props {
+type Props = {
   authorizationStatus: string;
   login: () => void;
   maxMistakes: number;
@@ -39,7 +39,7 @@ type Question = QuestionArtist | QuestionGenre;
 const WrappedGenreQuestionScreen = withActivePlayer(withUserAnswer(GenreQuestionScreen));
 const WrappedArtistQuestionScreen = withActivePlayer(ArtistQuestionScreen);
 
-class App extends React.PureComponent<Props, {}> {
+class App extends React.PureComponent<Props> {
   _renderGameScreen() {
     const {authorizationStatus, maxMistakes, mistakes, questions, onUserAnswer,
       onWelcomeButtonClick, step} = this.props;

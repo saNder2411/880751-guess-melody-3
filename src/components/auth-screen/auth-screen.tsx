@@ -1,12 +1,20 @@
 import * as React from 'react';
 
+type Props = {
+  onSubmit: ({login, password}: {login: string; password: string}) => void;
+  onReplayButtonClick: () => void;
+}
 
-class AuthScreen extends React.PureComponent {
+
+class AuthScreen extends React.PureComponent<Props> {
+  private loginRef: React.RefObject<HTMLInputElement>;
+  private passwordRef: React.RefObject<HTMLInputElement>;
+
   constructor(props) {
     super(props);
 
-    this._loginRef = React.createRef();
-    this._passwordRef = React.createRef();
+    this.loginRef = React.createRef();
+    this.passwordRef = React.createRef();
 
     this._handleSubmit = this._handleSubmit.bind(this);
   }
@@ -17,8 +25,8 @@ class AuthScreen extends React.PureComponent {
     evt.preventDefault();
 
     onSubmit({
-      login: this._loginRef.current.value,
-      password: this._passwordRef.current.value,
+      login: this.loginRef.current.value,
+      password: this.passwordRef.current.value,
     });
   }
 
@@ -40,13 +48,13 @@ class AuthScreen extends React.PureComponent {
           <p className="login__field">
             <label className="login__label" htmlFor="name">Логин</label>
             <input className="login__input" type="text" name="name" id="name"
-              ref={this._loginRef}
+              ref={this.loginRef}
             />
           </p>
           <p className="login__field">
             <label className="login__label" htmlFor="password">Пароль</label>
             <input className="login__input" type="text" name="password" id="password"
-              ref={this._passwordRef}
+              ref={this.passwordRef}
             />
             <span className="login__error">Неверный пароль</span>
           </p>

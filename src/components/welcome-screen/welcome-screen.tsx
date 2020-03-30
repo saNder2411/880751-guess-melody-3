@@ -1,6 +1,11 @@
 import * as React from 'react';
 
-const WelcomeScreen = ({errorsCount, onWelcomeButtonClick}) => {
+type Props = {
+  errorsCount: number;
+  onWelcomeButtonClick: () => void;
+};
+
+const WelcomeScreen: React.FC<Props> = ({errorsCount, onWelcomeButtonClick}) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">

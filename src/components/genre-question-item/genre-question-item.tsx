@@ -1,6 +1,15 @@
 import * as React from 'react';
+import {AnswerGenre} from '../../types';
 
-const GenreQuestionItem = ({answer, id, onChange, renderPlayer, userAnswer}) => {
+type Props = {
+  answer: AnswerGenre;
+  id: number;
+  onChange: (id: number, value: boolean) => void;
+  renderPlayer: (src: string, id: number) => React.ReactNode;
+  userAnswer: boolean;
+};
+
+const GenreQuestionItem: React.FC<Props> = ({answer, id, onChange, renderPlayer, userAnswer}) => {
 
   return (
     <div className="track">

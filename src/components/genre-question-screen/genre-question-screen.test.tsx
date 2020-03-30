@@ -1,9 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import GenreQuestionScreen from './genre-question-screen.jsx';
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
+import GenreQuestionScreen from './genre-question-screen';
+import {GameType, QuestionGenre} from '../../types';
+import {noop} from '../../utils';
 
-const question = {
-  type: `genre`,
+const question: QuestionGenre = {
+  type: GameType.GENRE,
   genre: `rock`,
   answers: [
     {
@@ -29,9 +31,9 @@ it(`GenreQuestionScreen is rendered correctly`, () => {
   const markup = renderer.create(
       <GenreQuestionScreen
         question={question}
-        onAnswer={() => { }}
-        renderPlayer={() => {}}
-        onChange={() => {}}
+        onAnswer={noop}
+        renderPlayer={() => null}
+        onChange={noop}
         userAnswers={[false, false, false, false]}
       />,
       {

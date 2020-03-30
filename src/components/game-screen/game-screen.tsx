@@ -2,12 +2,18 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Mistakes from '../mistakes/mistakes';
-import {GameType} from '../../const';
+import {GameType} from '../../types';
 import {getMistakes} from '../../reducer/game/selectors';
 import {ActionCreator} from '../../reducer/game/game';
 import {AppRoute} from '../../const';
 
-const GameScreen = ({type, children, goToWelcome, mistakes}) => {
+type Props = {
+  type: GameType;
+  goToWelcome: () => void;
+  mistakes: number;
+}
+
+const GameScreen: React.FC<Props> = ({type, children, goToWelcome, mistakes}) => {
   return (
     <section className={`game game--${type}`}>
       <header className="game__header">

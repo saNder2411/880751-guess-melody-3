@@ -2,7 +2,13 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {AppRoute} from '../../const';
 
-const WinScreen = ({questionsCount, mistakesCount, onReplayButtonClick}) => {
+type Props = {
+  questionsCount: number;
+  mistakesCount: number;
+  onReplayButtonClick: () => void;
+}
+
+const WinScreen: React.FC<Props> = ({questionsCount, mistakesCount, onReplayButtonClick}) => {
   const correctlyQuestionsCount = questionsCount - mistakesCount;
 
   return (
