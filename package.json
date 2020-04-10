@@ -2,7 +2,7 @@
   "name": "guess-melody",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://gitname.github.io/guess-melody",
+  "homepage": "http://saNder2411.github.io/guess-melody",
   "description": "Учебный проект «Угадай мелодию» от HTML Academy",
   "scripts": {
     "eslint": "npm run eslint.js && npm run eslint.ts",
