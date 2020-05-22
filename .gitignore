@@ -15,3 +15,7 @@ node_modules/
 public/
 bundle.js
 bundle.js.map
+/build
+.firebase
+.firebaserc
+firebase.json
